@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.1",
-    "signature": "3f3db44dff01215800e3dbefa26ce5c9c78018f2"
+    "signature": "7b71ce316f3ca711c464f94bc7b87d2a9784521e"
   },
   "compilationOptions": {
     "defines": [
@@ -34,7 +34,8 @@
           "Microsoft.Extensions.Logging.Debug": "1.1.1",
           "Microsoft.NETCore.App": "1.1.1",
           "Microsoft.VisualStudio.Web.BrowserLink": "1.1.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "1.1.0"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "1.1.0",
+          "jquery-globalize": "1.2.3"
         },
         "runtime": {
           "MvcMovie.dll": {}
@@ -53,6 +54,12 @@
         },
         "compile": {
           "lib/netstandard1.1/Autofac.dll": {}
+        }
+      },
+      "cldrjs/0.4.8": {},
+      "jquery-globalize/1.2.3": {
+        "dependencies": {
+          "cldrjs": "0.4.8"
         }
       },
       "microsoft.applicationinsights/2.2.0": {
@@ -3467,6 +3474,20 @@
       "sha512": "sha512-5gf8q7r5UR4tpds5Ml4d5+vzVPQtSa/VxI7pc0MqLhI69mhvnmTpPfgBRDsaMryii9iVQUqSsMAz+y4R8oBjXw==",
       "path": "autofac/4.5.0",
       "hashPath": "autofac.4.5.0.nupkg.sha512"
+    },
+    "cldrjs/0.4.8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mY/mj3iEbB1oq3kv8rPdiVEoKIBfg5bpGM7lnYjsaZNwPrnx6vsJYefXhlolD5QucL4+gGQEx+zaORtxZitWEA==",
+      "path": "cldrjs/0.4.8",
+      "hashPath": "cldrjs.0.4.8.nupkg.sha512"
+    },
+    "jquery-globalize/1.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tm38vanjwHittG0pOV3OhzcjvWOYoxp5J/mFquC91YPZT3g1X6ez6VgHOXH9Z6XXjE60PS3wmuB7ocRa+21iLQ==",
+      "path": "jquery-globalize/1.2.3",
+      "hashPath": "jquery-globalize.1.2.3.nupkg.sha512"
     },
     "microsoft.applicationinsights/2.2.0": {
       "type": "package",

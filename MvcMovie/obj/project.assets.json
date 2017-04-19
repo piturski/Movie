@@ -15,6 +15,15 @@
           "lib/netstandard1.1/Autofac.dll": {}
         }
       },
+      "cldrjs/0.4.8": {
+        "type": "package"
+      },
+      "jquery-globalize/1.2.3": {
+        "type": "package",
+        "dependencies": {
+          "cldrjs": "0.4.8"
+        }
+      },
       "Libuv/1.9.1": {
         "type": "package",
         "dependencies": {
@@ -4162,6 +4171,36 @@
         "lib/net45/Autofac.xml",
         "lib/netstandard1.1/Autofac.dll",
         "lib/netstandard1.1/Autofac.xml"
+      ]
+    },
+    "cldrjs/0.4.8": {
+      "sha512": "mY/mj3iEbB1oq3kv8rPdiVEoKIBfg5bpGM7lnYjsaZNwPrnx6vsJYefXhlolD5QucL4+gGQEx+zaORtxZitWEA==",
+      "type": "package",
+      "path": "cldrjs/0.4.8",
+      "files": [
+        "cldrjs.0.4.8.nupkg.sha512",
+        "cldrjs.nuspec",
+        "content/Scripts/cldr.js",
+        "content/Scripts/cldr/event.js",
+        "content/Scripts/cldr/supplemental.js",
+        "content/Scripts/cldr/unresolved.js"
+      ]
+    },
+    "jquery-globalize/1.2.3": {
+      "sha512": "tm38vanjwHittG0pOV3OhzcjvWOYoxp5J/mFquC91YPZT3g1X6ez6VgHOXH9Z6XXjE60PS3wmuB7ocRa+21iLQ==",
+      "type": "package",
+      "path": "jquery-globalize/1.2.3",
+      "files": [
+        "content/Scripts/globalize.js",
+        "content/Scripts/globalize/currency.js",
+        "content/Scripts/globalize/date.js",
+        "content/Scripts/globalize/message.js",
+        "content/Scripts/globalize/number.js",
+        "content/Scripts/globalize/plural.js",
+        "content/Scripts/globalize/relative-time.js",
+        "content/Scripts/globalize/unit.js",
+        "jquery-globalize.1.2.3.nupkg.sha512",
+        "jquery-globalize.nuspec"
       ]
     },
     "Libuv/1.9.1": {
@@ -10779,7 +10818,8 @@
       "Microsoft.Extensions.Logging.Debug >= 1.1.1",
       "Microsoft.NETCore.App >= 1.1.1",
       "Microsoft.VisualStudio.Web.BrowserLink >= 1.1.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 1.1.0"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 1.1.0",
+      "jquery-globalize >= 1.2.3"
     ]
   },
   "packageFolders": {
@@ -10853,6 +10893,10 @@
           "Autofac": {
             "target": "Package",
             "version": "4.5.0"
+          },
+          "jquery-globalize": {
+            "target": "Package",
+            "version": "1.2.3"
           }
         },
         "imports": [
