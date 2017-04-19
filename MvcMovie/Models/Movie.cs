@@ -7,8 +7,7 @@ namespace MvcMovie.Models
     {
         public int ID { get; set; }
         public string Title { get; set; }
-        //public TypeOfQuality QualityType { get; set; }
-        public enum TypeOfQuality
+        public enum Quality
         {
             [Display(Name = "NONE_INFO")]
             NONE_INFO = 0,
@@ -21,11 +20,8 @@ namespace MvcMovie.Models
             [Display(Name = "ULTRAHD_2160p")]
             ULTRAHD_2160p = 4,
         }
-
-        public TypeOfQuality TypeOfQualitySetting { get; set; }
-
+        public Quality QualityType { get; set; }
         [Display(Name = "Release Date")]
-    
         [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
         public string Genre { get; set; }

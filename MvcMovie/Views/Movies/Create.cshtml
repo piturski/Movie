@@ -19,9 +19,20 @@
         </div>
 
         <div class="form-group">
-            <label class="col-md-2 control-label" asp-for="TypeOfQualitySetting"></label>
+            <label asp-for="QualityType" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="TypeOfQualitySetting" asp-items="Html.GetEnumSelectList<TypeOfQualitySetting>()"></select>
+                @*<select asp-for="QualityType" asp-items="Html.GetEnumSelectList<QualityType>()">
+                    <option selected="selected" value="">Please select</option>
+                </select>*@
+                <select id="QualityType" name="QualityType">
+                    <option value="0">NONE_INFO</option>
+                    <option value="1">SD_576i</option>
+                    <option value="2">HDREADY_720p</option>
+                    <option value="3">FULLHD_1080p</option>
+                    <option value="4">ULTRAHD_2160p</option>
+                </select>
+
+                @*<span asp-validation-for="QualityType" class="text-danger"></span>*@
             </div>
         </div>
 
