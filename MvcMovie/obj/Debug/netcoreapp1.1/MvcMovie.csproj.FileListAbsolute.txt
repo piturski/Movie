@@ -7,3 +7,12 @@ C:\Users\pitur\Desktop\MvcMovie\MvcMovie\obj\Debug\netcoreapp1.1\MvcMovie.csproj
 C:\Users\pitur\Desktop\MvcMovie\MvcMovie\obj\Debug\netcoreapp1.1\MvcMovie.AssemblyInfo.cs
 C:\Users\pitur\Desktop\MvcMovie\MvcMovie\obj\Debug\netcoreapp1.1\MvcMovie.dll
 C:\Users\pitur\Desktop\MvcMovie\MvcMovie\obj\Debug\netcoreapp1.1\MvcMovie.pdb
+D:\Dokumenty\Praca\MvcMovie\MvcMovie\bin\Debug\netcoreapp1.1\MvcMovie.deps.json
+D:\Dokumenty\Praca\MvcMovie\MvcMovie\bin\Debug\netcoreapp1.1\MvcMovie.runtimeconfig.json
+D:\Dokumenty\Praca\MvcMovie\MvcMovie\bin\Debug\netcoreapp1.1\MvcMovie.runtimeconfig.dev.json
+D:\Dokumenty\Praca\MvcMovie\MvcMovie\bin\Debug\netcoreapp1.1\MvcMovie.dll
+D:\Dokumenty\Praca\MvcMovie\MvcMovie\bin\Debug\netcoreapp1.1\MvcMovie.pdb
+D:\Dokumenty\Praca\MvcMovie\MvcMovie\obj\Debug\netcoreapp1.1\MvcMovie.csprojResolveAssemblyReference.cache
+D:\Dokumenty\Praca\MvcMovie\MvcMovie\obj\Debug\netcoreapp1.1\MvcMovie.AssemblyInfo.cs
+D:\Dokumenty\Praca\MvcMovie\MvcMovie\obj\Debug\netcoreapp1.1\MvcMovie.dll
+D:\Dokumenty\Praca\MvcMovie\MvcMovie\obj\Debug\netcoreapp1.1\MvcMovie.pdb
