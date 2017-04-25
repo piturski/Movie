@@ -6,16 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
+using MvcMovie.Services;
 
 namespace MvcMovie.Controllers
 {
     public class MoviesController : Controller
     {
         private readonly MvcMovieContext _context;
+        private readonly MovieService _movieService;
 
-        public MoviesController(MvcMovieContext context)
+        public MoviesController(MvcMovieContext context, MovieService movieService)
         {
-            _context = context;    
+            _context = context;
+            _movieService = movieService;
         }
 
         public async Task<IActionResult> Index(string movieGenre, string searchString)
@@ -49,19 +52,15 @@ namespace MvcMovie.Controllers
         // GET: Movies/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            if (id.HasValue)
+            {
+                var movie = await _movieService.GetByIdAsync(id.Value);
+                return View(movie);
+            }
+            else
             {
                 return NotFound();
             }
-
-            var movie = await _context.Movie
-                .SingleOrDefaultAsync(m => m.ID == id);
-            if (movie == null)
-            {
-                return NotFound();
-            }
-
-            return View(movie);
         }
 
         // GET: Movies/Create
