@@ -21,14 +21,9 @@ namespace MvcMovie.Services
             return await _context.Movie.SingleOrDefaultAsync(m => m.ID == id);
         }
 
-        public async Task CreateMovieAsync(string title)
+        public async Task CreateMovieAsync(Movie movie)
         {
-            var movieEntity = new Movie()
-            {
-                Title = title
-            };
-
-            _context.Movie.Add(movieEntity);
+            _context.Movie.Add(movie);
             await _context.SaveChangesAsync();
         }
     }

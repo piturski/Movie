@@ -72,14 +72,14 @@ namespace MvcMovie.Controllers
         // POST: Movies/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,Title,QualityType,ReleaseDate,Genre,Price,Rating")] Movie movie)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(movie);
-                await _context.SaveChangesAsync();
+                await _movieService.CreateMovieAsync(movie);
                 return RedirectToAction("Index");
             }
             return View(movie);
@@ -93,7 +93,7 @@ namespace MvcMovie.Controllers
                 return NotFound();
             }
 
-            var movie = await _context.Movie.SingleOrDefaultAsync(m => m.ID == id);
+            var movie = await _movieService.GetByIdAsync(id.Value);
             if (movie == null)
             {
                 return NotFound();
