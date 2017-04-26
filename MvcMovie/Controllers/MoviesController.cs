@@ -121,7 +121,7 @@ namespace MvcMovie.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movie.ID))
+                    if (!_movieService.MovieExists(movie.ID))
                     {
                         return NotFound();
                     }
@@ -155,16 +155,10 @@ namespace MvcMovie.Controllers
         // POST: Movies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int? id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var movie = await _movieService.GetByIdAsync(id.Value);
-            await _movieService.DeleteMovieAsync(movie);
+            await _movieService.DeleteMovieAsync(id);
             return RedirectToAction("Index");
-        }
-
-        private bool MovieExists(int id)
-        {
-            return _context.Movie.Any(e => e.ID == id);
         }
     }
 }
