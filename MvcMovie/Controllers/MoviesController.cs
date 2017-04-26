@@ -143,8 +143,7 @@ namespace MvcMovie.Controllers
                 return NotFound();
             }
 
-            var movie = await _context.Movie
-                .SingleOrDefaultAsync(m => m.ID == id);
+            var movie = await _movieService.GetByIdAsync(id.Value);
             if (movie == null)
             {
                 return NotFound();
@@ -156,11 +155,10 @@ namespace MvcMovie.Controllers
         // POST: Movies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(int? id)
         {
-            var movie = await _context.Movie.SingleOrDefaultAsync(m => m.ID == id);
-            _context.Movie.Remove(movie);
-            await _context.SaveChangesAsync();
+            var movie = await _movieService.GetByIdAsync(id.Value);
+            await _movieService.DeleteMovieAsync(movie);
             return RedirectToAction("Index");
         }
 

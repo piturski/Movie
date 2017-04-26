@@ -32,5 +32,11 @@ namespace MvcMovie.Services
             _context.Update(movie);
             await _context.SaveChangesAsync();
         }
+
+        public async Task DeleteMovieAsync(Movie movie)
+        {
+            _context.Movie.Remove(movie);
+            await _context.SaveChangesAsync();
+        }
     }
 }
