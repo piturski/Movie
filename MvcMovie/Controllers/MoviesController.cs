@@ -117,8 +117,7 @@ namespace MvcMovie.Controllers
             {
                 try
                 {
-                    _context.Update(movie);
-                    await _context.SaveChangesAsync();
+                    await _movieService.EditMovieAsync(movie);
                 }
                 catch (DbUpdateConcurrencyException)
                 {

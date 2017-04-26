@@ -26,5 +26,11 @@ namespace MvcMovie.Services
             _context.Movie.Add(movie);
             await _context.SaveChangesAsync();
         }
+
+        public async Task EditMovieAsync(Movie movie)
+        {
+            _context.Update(movie);
+            await _context.SaveChangesAsync();
+        }
     }
 }
