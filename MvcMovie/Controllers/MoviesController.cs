@@ -12,39 +12,18 @@ namespace MvcMovie.Controllers
 {
     public class MoviesController : Controller
     {
-        private readonly MvcMovieContext _context;
         private readonly MovieService _movieService;
 
-        public MoviesController(MvcMovieContext context, MovieService movieService)
+        public MoviesController(MovieService movieService)
         {
-            _context = context;
             _movieService = movieService;
         }
-
+        
         public async Task<IActionResult> Index(string movieGenre, string searchString)
         {
-            // Use LINQ to get list of genres.
-            IQueryable<string> genreQuery = from m in _context.Movie
-                                            orderby m.Genre
-                                            select m.Genre;
-
-
-            var movies = from m in _context.Movie
-                         select m;
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                movies = movies.Where(s => s.Title.Contains(searchString));
-            }
-
-            if (!String.IsNullOrEmpty(movieGenre))
-            {
-                movies = movies.Where(x => x.Genre == movieGenre);
-            }
-
             var movieGenreVM = new MovieGenreViewModel();
-            movieGenreVM.genres = new SelectList(await genreQuery.Distinct().ToListAsync());
-            movieGenreVM.movies = await movies.ToListAsync();
+            movieGenreVM.genres = new SelectList(await _movieService.GetGenreList());
+            movieGenreVM.movies = _movieService.GetFilteredList(movieGenre, searchString);
 
             return View(movieGenreVM);
         }
